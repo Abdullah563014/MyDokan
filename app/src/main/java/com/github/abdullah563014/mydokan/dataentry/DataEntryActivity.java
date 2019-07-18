@@ -3,20 +3,28 @@ package com.github.abdullah563014.mydokan.dataentry;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.DatePickerDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.github.abdullah563014.mydokan.R;
+import com.github.abdullah563014.mydokan.Utils.Utils;
 import com.github.abdullah563014.mydokan.database.DatabaseClient;
 import com.github.abdullah563014.mydokan.database.Task;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class DataEntryActivity extends AppCompatActivity implements View.OnClickListener {
 
     Toolbar toolbar;
+    Calendar myCalendar = Calendar.getInstance();
+    DatePickerDialog.OnDateSetListener calenderDate;
     EditText
             dateEditText,
             salaryEditText,
@@ -58,6 +66,8 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
 
 
         initializeAll();
+
+        getCalenderDate();
     }
 
     private void initializeAll() {
@@ -99,7 +109,7 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
         switch (v.getId()) {
             case R.id.billSubmitButtonId:
                 if (gatherAllValueFromEditText()) {
-                    InsertAsyncTask insertAsyncTask = new InsertAsyncTask();
+                    Utils.InsertAsyncTask insertAsyncTask=new Utils.InsertAsyncTask(DataEntryActivity.this,date,electric,store,car,guest,donation,commute,commission,mixed,shareHolder,habibureVai,faizullahVai,motorcycle);
                     insertAsyncTask.execute();
                 }
                 break;
@@ -130,19 +140,53 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
-    class InsertAsyncTask extends AsyncTask<Void, Void, Void> {
+//    class InsertAsyncTask extends AsyncTask<Void, Void, Void> {
+//
+//        @Override
+//        protected Void doInBackground(Void... voids) {
+//            Task task = new Task(date, electric, store, car, guest, donation, commute, commission, mixed, shareHolder, habibureVai, faizullahVai, motorcycle);
+//            DatabaseClient.getInstance(getApplicationContext()).getTaskDatabase().taskDao().insert(task);
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Void aVoid) {
+//            super.onPostExecute(aVoid);
+//            Toast.makeText(DataEntryActivity.this, "Insertion Successful", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
-        @Override
-        protected Void doInBackground(Void... voids) {
-            Task task = new Task(date, electric, store, car, guest, donation, commute, commission, mixed, shareHolder, habibureVai, faizullahVai, motorcycle);
-            DatabaseClient.getInstance(getApplicationContext()).getTaskDatabase().taskDao().insert(task);
-            return null;
-        }
 
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            Toast.makeText(DataEntryActivity.this, "Insertion Successful", Toast.LENGTH_SHORT).show();
-        }
+    private void getCalenderDate(){
+        EditText edittext= (EditText) findViewById(R.id.dateTimePickerEditTextId);
+        calenderDate = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel();
+            }
+
+        };
+
+        edittext.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(DataEntryActivity.this, calenderDate, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
     }
+    private void updateLabel() {
+        String myFormat = "MM/dd/yy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat);
+
+        dateEditText.setText(sdf.format(myCalendar.getTime()));
+    }
+
 }
