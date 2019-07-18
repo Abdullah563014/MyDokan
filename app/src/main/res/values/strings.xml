@@ -13,4 +13,21 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
+    <string name="ajker_tarikh">আজকের তারিখ</string>
+    <string name="beton">বেতন</string>
+    <string name="biddut_bill">বিদ্যুৎ বিল</string>
+    <string name="dokan_vara">দোকান ভাড়া</string>
+    <string name="gari_babod">গাড়ি বাবদ</string>
+    <string name="garir_driver">গাড়ি চালককে দেয়া</string>
+    <string name="guest_bill">মেহমানদারী</string>
+    <string name="donation_babod">দান</string>
+    <string name="commute_babod">যাতায়াত</string>
+    <string name="commission">কমিশন</string>
+    <string name="bibidh_khoroc">বিবিধ খরচ</string>
+    <string name="share_holder">শেয়ার হোল্ডার</string>
+    <string name="habibure_vai">হাবিবুর ভাই</string>
+    <string name="faizullah_vai">ফয়জুল্লাহ ভাই</string>
+    <string name="motorcycle_babod">মোটরসাইকেল বাবদ</string>
+    <string name="bill_submit">সম্পাদন করুন</string>
 </resources>

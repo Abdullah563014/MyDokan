@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#4F2196F3"
+    android:layout_height="match_parent"
+    tools:context=".dataentry.DataEntryActivity">
+
+    <include
+        layout="@layout/toolbar_layout"/>
+
+    <ScrollView
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/dateTimePickerEditTextId"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:focusable="false"
+                android:inputType="date"
+                android:focusableInTouchMode="true"
+                android:hint="@string/ajker_tarikh"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/salaryEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/beton"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/electricBillEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/biddut_bill"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/storeBillEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/dokan_vara"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/carBillEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/gari_babod"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/guestBillEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/guest_bill"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/donationEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/donation_babod"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/commuteBillEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/commute_babod"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/commissionEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/commission"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/bibidhKhorocEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/bibidh_khoroc"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/shareHolderEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/share_holder"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/habibureVaiEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/habibure_vai"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/faizullahVaiEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/faizullah_vai"
+                android:layout_height="50dp" />
+            <EditText
+                android:id="@+id/motorcycleBillEditTextId"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/motorcycle_babod"
+                android:layout_height="50dp" />
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/billSubmitButtonId"
+                android:text="@string/bill_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
