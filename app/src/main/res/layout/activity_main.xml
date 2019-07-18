@@ -9,9 +9,21 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            layout="@layout/toolbar_layout"/>
 
-    <include
-        layout="@layout/toolbar_layout"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:background="#5C5B5B"
+            android:id="@+id/mainActivityRecyclerViewId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
 
 
     <com.google.android.material.navigation.NavigationView

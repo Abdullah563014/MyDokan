@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:background="#83000FF0"
+        android:id="@+id/recyclerViewViewModelTextViewId"
+        android:text="hello"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+</LinearLayout>

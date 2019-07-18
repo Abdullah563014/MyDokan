@@ -140,21 +140,6 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
-//    class InsertAsyncTask extends AsyncTask<Void, Void, Void> {
-//
-//        @Override
-//        protected Void doInBackground(Void... voids) {
-//            Task task = new Task(date, electric, store, car, guest, donation, commute, commission, mixed, shareHolder, habibureVai, faizullahVai, motorcycle);
-//            DatabaseClient.getInstance(getApplicationContext()).getTaskDatabase().taskDao().insert(task);
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Void aVoid) {
-//            super.onPostExecute(aVoid);
-//            Toast.makeText(DataEntryActivity.this, "Insertion Successful", Toast.LENGTH_SHORT).show();
-//        }
-//    }
 
 
     private void getCalenderDate(){
@@ -183,7 +168,7 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
 
     }
     private void updateLabel() {
-        String myFormat = "MM/dd/yy"; //In which you need put here
+        String myFormat = "dd/MM/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat);
 
         dateEditText.setText(sdf.format(myCalendar.getTime()));
